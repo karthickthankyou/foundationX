@@ -8,7 +8,8 @@
     "format:write": "pnpm format --write",
     "tsc": "pnpm exec nx run-many --target=tsc",
     "lint": "pnpm exec nx run-many --target=lint",
-    "validate": "pnpm format:write && pnpm tsc && pnpm lint"
+    "validate": "pnpm format:write && pnpm tsc && pnpm lint",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "concurrently": "^8.2.2",
     "lint-staged": "^15.0.2",
     "nx": "17.1.1",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "husky": "^8.0.0"
   }
 }
