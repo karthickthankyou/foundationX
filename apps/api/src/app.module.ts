@@ -7,6 +7,7 @@ import { join } from 'path'
 import { ConfigModule } from '@nestjs/config'
 import { UsersModule } from './models/users/users.module'
 import { PrismaModule } from './common/prisma/prisma.module'
+import { AuthModule } from './common/auth/auth.module'
 
 @Module({
   imports: [
@@ -21,6 +22,8 @@ import { PrismaModule } from './common/prisma/prisma.module'
     }),
     ConfigModule.forRoot(),
     PrismaModule,
+    AuthModule,
+
     UsersModule,
   ],
   controllers: [AppController],

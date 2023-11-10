@@ -14,8 +14,20 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type AuthProvider {
+  type: AuthProviderType!
+  uid: String!
+}
+
+enum AuthProviderType {
+  GOOGLE
+  CREDENTIALS
+}
+
 type Query {
   users(distinct: [UserScalarFieldEnum!], where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int): [User!]!
+  getCredentials(email: String!): User
+  getAuthProvider(uid: String!): AuthProvider
   user(where: UserWhereUniqueInput): User!
 }
 

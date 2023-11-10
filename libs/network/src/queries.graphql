@@ -1,0 +1,38 @@
+mutation createUserWithCredentials(
+  $createUserWithCredentialsInput: CreateUserWithCredentialsInput!
+) {
+  createUserWithCredentials(
+    createUserWithCredentialsInput: $createUserWithCredentialsInput
+  ) {
+    uid
+  }
+}
+
+mutation CreateUserWithProvider(
+  $createUserWithProviderInput: CreateUserWithProviderInput!
+) {
+  createUserWithProvider(
+    createUserWithProviderInput: $createUserWithProviderInput
+  ) {
+    uid
+  }
+}
+
+query getCredentials($email: String!) {
+  getCredentials(email: $email) {
+    uid
+    name
+    image
+    credential {
+      email
+      passwordHash
+    }
+  }
+}
+
+query GetAuthProvider($uid: String!) {
+  getAuthProvider(uid: $uid) {
+    uid
+    type
+  }
+}

@@ -7,3 +7,11 @@ export class CreateUserInput extends PickType(
   ['uid', 'name'],
   InputType,
 ) {}
+
+@InputType()
+export class CreateUserWithCredentialsInput {
+  name: string
+  email: string
+  password: string
+  image?: string
+}

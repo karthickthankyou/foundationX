@@ -1,0 +1,23 @@
+{
+  "name": "@ultimate/network",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/named-operations-object": "^3.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.3.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1"
+  }
+}

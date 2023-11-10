@@ -1,0 +1,29 @@
+{
+  "name": "@ultimate/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@ultimate/network": "workspace:^",
+    "bcrypt": "^5.1.1",
+    "graphql": "^16.8.1",
+    "jsonwebtoken": "^9.0.2",
+    "next-auth": "^4.24.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.4",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "next": "14.0.2"
+  }
+}
