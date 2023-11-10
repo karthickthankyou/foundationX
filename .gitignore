@@ -4,3 +4,6 @@ dist
 .next 
 .env 
 .nx
+
+
+.nx/cache

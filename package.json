@@ -1,12 +1,22 @@
 {
-  "name": "showtime-pnpm-14",
+  "name": "ultimate-fullstack-monorepo",
   "version": "1.0.0",
-  "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier  \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "pnpm format --check",
+    "format:write": "pnpm format --write",
+    "tsc": "pnpm exec nx run-many --target=tsc",
+    "lint": "pnpm exec nx run-many --target=lint",
+    "validate": "pnpm format:write && pnpm tsc && pnpm lint"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "lint-staged": "^15.0.2",
+    "nx": "17.1.1",
+    "prettier": "^2.3.2"
+  }
 }
