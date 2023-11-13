@@ -1,0 +1,24 @@
+{
+  "name": "@ultimate/util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "next": "14.0.2",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "next": "14.0.2"
+  }
+}

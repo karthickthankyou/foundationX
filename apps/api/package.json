@@ -32,9 +32,12 @@
     "@nestjs/platform-express": "^9.0.0",
     "@prisma/client": "5.5.2",
     "@ultimate/sample-lib": "workspace:^",
+    "@ultimate/util": "workspace:^",
+    "bcryptjs": "^2.4.3",
     "graphql": "^16.8.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",

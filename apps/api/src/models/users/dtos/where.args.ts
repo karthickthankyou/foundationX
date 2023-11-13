@@ -23,6 +23,7 @@ export class UserWhereInputStrict
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
   name: StringFilter
+  image: StringFilter
 
   AND: UserWhereInput[]
   OR: UserWhereInput[]

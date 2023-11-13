@@ -18,6 +18,8 @@ export class UserOrderByWithRelationInputStrict
   updatedAt: Prisma.SortOrder
   @Field(() => Prisma.SortOrder)
   name: Prisma.SortOrder
+  @Field(() => Prisma.SortOrder)
+  image: Prisma.SortOrder
 }
 
 @InputType()

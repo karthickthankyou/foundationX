@@ -23,7 +23,7 @@ query getCredentials($email: String!) {
     uid
     name
     image
-    credential {
+    credentials {
       email
       passwordHash
     }

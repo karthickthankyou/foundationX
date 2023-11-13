@@ -1,19 +1,20 @@
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core'
 import { print } from 'graphql'
 
-interface FetchResult<T> {
+export interface FetchResult<T> {
   data?: T
   error?: string
 }
 
-interface GraphqlRequestOptions<TData, V> {
+export interface GraphqlRequestOptions<TData, V> {
   document: TypedDocumentNode<TData, V>
   variables?: V
   config?: RequestInit
+  token?: string
   apiSecret?: string
 }
 
-/**ss
+/**
  * Sends a GraphQL request and returns the response data.
  *
  * @param {TypedDocumentNode<TData, V>} document - The GraphQL query/mutation document.
@@ -27,8 +28,12 @@ export async function fetchGraphQL<TData, V>({
   variables,
   apiSecret,
   config,
+  token,
 }: GraphqlRequestOptions<TData, V>): Promise<FetchResult<TData>> {
-  const token = await fetch('/api/auth/token').then((res) => res.json())
+  //   const token = await fetch('/api/auth/token').then((res) => res.json())
+  //   console.log('token ', token)
+  //   const getCookies = cookies()
+  //   const token = getCookies.get('next-auth.session-token')?.value || ''
 
   const query = print(document)
 

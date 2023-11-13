@@ -1,4 +1,4 @@
-import { ObjectType } from '@nestjs/graphql'
+import { Field, ObjectType } from '@nestjs/graphql'
 import { User as UserType } from '@prisma/client'
 import { RestrictProperties } from 'src/common/dtos/common.input'
 
@@ -8,6 +8,8 @@ export class User implements RestrictProperties<User, UserType> {
   createdAt: Date
   updatedAt: Date
   name: string
+  @Field({ nullable: true })
+  image: string
   // Todo Add below to make optional fields optional.
   // @Field({ nullable: true })
 }

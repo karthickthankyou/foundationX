@@ -11,10 +11,12 @@ datasource db {
 }
 
 model User {
-    uid          String        @id
-    createdAt    DateTime      @default(now())
-    updatedAt    DateTime      @updatedAt
-    name         String?
+    uid       String   @id
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    name      String?
+    image     String?
+
     credentials  Credentials?
     authProvider AuthProvider?
 }

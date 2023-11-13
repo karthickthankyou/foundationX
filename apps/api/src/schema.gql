@@ -3,10 +3,12 @@
 # ------------------------------------------------------
 
 type User {
+  image: String
   uid: String!
   createdAt: DateTime!
   updatedAt: DateTime!
   name: String!
+  credentials: Credential!
 }
 
 """
@@ -24,6 +26,14 @@ enum AuthProviderType {
   CREDENTIALS
 }
 
+type Credential {
+  uid: String!
+  email: String!
+  passwordHash: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
 type Query {
   users(distinct: [UserScalarFieldEnum!], where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int): [User!]!
   getCredentials(email: String!): User
@@ -36,6 +46,7 @@ enum UserScalarFieldEnum {
   createdAt
   updatedAt
   name
+  image
 }
 
 input UserWhereInput {
@@ -43,6 +54,7 @@ input UserWhereInput {
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
   name: StringFilter
+  image: StringFilter
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
@@ -83,6 +95,7 @@ input UserOrderByWithRelationInput {
   createdAt: SortOrder
   updatedAt: SortOrder
   name: SortOrder
+  image: SortOrder
 }
 
 enum SortOrder {
@@ -95,17 +108,28 @@ input UserWhereUniqueInput {
 }
 
 type Mutation {
-  createUser(createUserInput: CreateUserInput!): User!
+  createUserWithProvider(createUserWithProviderInput: CreateUserWithProviderInput!): User!
+  createUserWithCredentials(createUserWithCredentialsInput: CreateUserWithCredentialsInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(where: UserWhereUniqueInput): User!
 }
 
-input CreateUserInput {
+input CreateUserWithProviderInput {
+  image: String
   uid: String!
   name: String!
+  type: AuthProviderType!
+}
+
+input CreateUserWithCredentialsInput {
+  name: String!
+  email: String!
+  password: String!
+  image: String
 }
 
 input UpdateUserInput {
+  image: String
   uid: String!
   name: String
 }

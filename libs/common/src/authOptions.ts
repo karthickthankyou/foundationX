@@ -11,7 +11,7 @@ import { JWT } from 'next-auth/jwt'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
-import { fetchGraphQL } from './fetch'
+import { fetchGraphQLStatic } from './fetch/static'
 
 const MAX_AGE = 1 * 24 * 60 * 60
 
@@ -31,26 +31,39 @@ export const authOptions: NextAuthOptions = {
         if (!credentials) return null
 
         const { email, password } = credentials
+        if (!email || !password) {
+          throw new Error('Email and password are required')
+        }
 
-        const auth = await fetchGraphQL({
+        const auth = await fetchGraphQLStatic({
           document: GetCredentialsDocument,
           variables: { email: email },
         })
         if (!auth.data?.getCredentials || auth.error) {
-          return null
-        }
+          console.error(`Authentication error: ${auth.error}`)
 
-        const passwordValid = bcrypt.compareSync(
-          password,
-          auth.data?.getCredentials.credential.passwordHash,
-        )
+          throw new Error(
+            'Authentication failed: Invalid credentials or user not found',
+          )
+        }
+        let passwordValid = false
+
+        try {
+          passwordValid = bcrypt.compareSync(
+            password,
+            auth.data?.getCredentials.credentials.passwordHash,
+          )
+        } catch (error) {
+          console.error('Error in password comparison', error)
+          throw new Error('Authentication failed due to server error')
+        }
 
         if (auth.data && passwordValid) {
           const {
             uid,
             name,
             image,
-            credential: { email },
+            credentials: { email },
           } = auth.data.getCredentials
 
           return { id: uid, name, image, email }
@@ -112,14 +125,14 @@ export const authOptions: NextAuthOptions = {
         //   Create user
         const { id, name, image } = user
 
-        const existingUser = await fetchGraphQL({
+        const existingUser = await fetchGraphQLStatic({
           document: GetAuthProviderDocument,
           variables: {
             uid: id,
           },
         })
         if (!existingUser.data?.getAuthProvider?.uid) {
-          const newUser = await fetchGraphQL({
+          const newUser = await fetchGraphQLStatic({
             document: CreateUserWithProviderDocument,
             variables: {
               createUserWithProviderInput: {
@@ -152,7 +165,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   pages: {
-    signIn: '/signin',
+    signIn: '/signIn',
   },
 }
 
