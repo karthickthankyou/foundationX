@@ -6,6 +6,7 @@ import { AuthProvider } from '@ultimate/ui/src/components/molecules/authProvider
 import { Container } from '@ultimate/ui/src/components/atoms/container'
 import { Footer } from '@ultimate/ui/src/components/organisms/Footer'
 import { Navbar } from '@ultimate/ui/src/components/organisms/Navbar'
+import { ThemeProvider } from '@ultimate/ui/src/components/organisms/ThemeProvier'
 import { Toaster } from '@ultimate/ui/src/components/molecules/Toaster/Toaster'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,9 +26,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Container>
           <AuthProvider>
-            <Navbar />
-            {children}
-            <Toaster />
+            <ThemeProvider attribute="class" defaultTheme="light">
+              <Navbar />
+              {children}
+              <Toaster />
+            </ThemeProvider>
           </AuthProvider>
           <Footer />
         </Container>

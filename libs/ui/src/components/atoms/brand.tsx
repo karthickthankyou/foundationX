@@ -8,7 +8,10 @@ export interface IBrandProps {}
 export const Brand = () => {
   return (
     <div>
-      <Link href="/" className={cn('hover:underline underline-offset-4')}>
+      <Link
+        href="/"
+        className={cn('hover:underline font-medium underline-offset-4')}
+      >
         Ultimate monorepo.
       </Link>
       <DeveloperInfo />

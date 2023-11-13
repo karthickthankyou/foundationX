@@ -41,3 +41,10 @@ enum AuthProviderType {
     GOOGLE
     CREDENTIALS
 }
+
+model Item {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    name      String
+}

@@ -1,5 +1,5 @@
 'use client'
-import { Mic2, Menu, PenBoxIcon, LockIcon } from 'lucide-react'
+import { Mic2, Menu, PenBoxIcon } from 'lucide-react'
 import { useDialogState } from '@ultimate/util/hooks'
 
 import Link from 'next/link'
@@ -49,14 +49,9 @@ export function Sidebar() {
         </SheetHeader>
 
         <div className="flex flex-col gap-2 mt-4 mb-8">
-          <Link href="/reporter">
+          <Link href="/anotherPage">
             <div className="flex items-center gap-2">
-              <PenBoxIcon className="w-4 h-4" /> Reporter
-            </div>
-          </Link>
-          <Link href="/admin">
-            <div className="flex items-center gap-2">
-              <LockIcon className="w-4 h-4" /> Admin
+              <PenBoxIcon className="w-4 h-4" /> Another Page
             </div>
           </Link>
         </div>

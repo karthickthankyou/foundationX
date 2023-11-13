@@ -41,6 +41,10 @@ export enum AuthProviderType {
   Google = 'GOOGLE',
 }
 
+export type CreateItemInput = {
+  name: Scalars['String']['input']
+}
+
 export type CreateUserWithCredentialsInput = {
   email: Scalars['String']['input']
   image?: InputMaybe<Scalars['String']['input']>
@@ -74,12 +78,63 @@ export type DateTimeFilter = {
   notIn?: InputMaybe<Array<Scalars['String']['input']>>
 }
 
+export type IntFilter = {
+  equals?: InputMaybe<Scalars['Int']['input']>
+  gt?: InputMaybe<Scalars['Int']['input']>
+  gte?: InputMaybe<Scalars['Int']['input']>
+  lt?: InputMaybe<Scalars['Int']['input']>
+  lte?: InputMaybe<Scalars['Int']['input']>
+}
+
+export type Item = {
+  __typename?: 'Item'
+  createdAt: Scalars['DateTime']['output']
+  id: Scalars['Int']['output']
+  name: Scalars['String']['output']
+  updatedAt: Scalars['DateTime']['output']
+}
+
+export type ItemOrderByWithRelationInput = {
+  createdAt?: InputMaybe<SortOrder>
+  id?: InputMaybe<SortOrder>
+  name?: InputMaybe<SortOrder>
+  updatedAt?: InputMaybe<SortOrder>
+}
+
+export enum ItemScalarFieldEnum {
+  CreatedAt = 'createdAt',
+  Id = 'id',
+  Name = 'name',
+  UpdatedAt = 'updatedAt',
+}
+
+export type ItemWhereInput = {
+  AND?: InputMaybe<Array<ItemWhereInput>>
+  NOT?: InputMaybe<Array<ItemWhereInput>>
+  OR?: InputMaybe<Array<ItemWhereInput>>
+  createdAt?: InputMaybe<DateTimeFilter>
+  id?: InputMaybe<IntFilter>
+  name?: InputMaybe<StringFilter>
+  updatedAt?: InputMaybe<DateTimeFilter>
+}
+
+export type ItemWhereUniqueInput = {
+  id?: InputMaybe<Scalars['Int']['input']>
+}
+
 export type Mutation = {
   __typename?: 'Mutation'
+  createItem: Item
   createUserWithCredentials: User
   createUserWithProvider: User
+  removeItem: Item
   removeUser: User
+  updateItem: Item
   updateUser: User
+}
+
+export type MutationCreateItemArgs = {
+  createItemInput: CreateItemInput
 }
 
 export type MutationCreateUserWithCredentialsArgs = {
@@ -90,8 +145,16 @@ export type MutationCreateUserWithProviderArgs = {
   createUserWithProviderInput: CreateUserWithProviderInput
 }
 
+export type MutationRemoveItemArgs = {
+  where?: InputMaybe<ItemWhereUniqueInput>
+}
+
 export type MutationRemoveUserArgs = {
   where?: InputMaybe<UserWhereUniqueInput>
+}
+
+export type MutationUpdateItemArgs = {
+  updateItemInput: UpdateItemInput
 }
 
 export type MutationUpdateUserArgs = {
@@ -102,6 +165,8 @@ export type Query = {
   __typename?: 'Query'
   getAuthProvider?: Maybe<AuthProvider>
   getCredentials?: Maybe<User>
+  item: Item
+  items: Array<Item>
   user: User
   users: Array<User>
 }
@@ -112,6 +177,19 @@ export type QueryGetAuthProviderArgs = {
 
 export type QueryGetCredentialsArgs = {
   email: Scalars['String']['input']
+}
+
+export type QueryItemArgs = {
+  where?: InputMaybe<ItemWhereUniqueInput>
+}
+
+export type QueryItemsArgs = {
+  cursor?: InputMaybe<ItemWhereUniqueInput>
+  distinct?: InputMaybe<Array<ItemScalarFieldEnum>>
+  orderBy?: InputMaybe<Array<ItemOrderByWithRelationInput>>
+  skip?: InputMaybe<Scalars['Int']['input']>
+  take?: InputMaybe<Scalars['Int']['input']>
+  where?: InputMaybe<ItemWhereInput>
 }
 
 export type QueryUserArgs = {
@@ -150,6 +228,11 @@ export type StringFilter = {
   not?: InputMaybe<Scalars['String']['input']>
   notIn?: InputMaybe<Array<Scalars['String']['input']>>
   startsWith?: InputMaybe<Scalars['String']['input']>
+}
+
+export type UpdateItemInput = {
+  id: Scalars['Int']['input']
+  name?: InputMaybe<Scalars['String']['input']>
 }
 
 export type UpdateUserInput = {

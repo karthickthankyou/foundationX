@@ -19,7 +19,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "entity": "npx nestjs-prisma-codegen --entity"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",
@@ -30,10 +31,13 @@
     "@nestjs/graphql": "^12.0.10",
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^7.1.15",
     "@prisma/client": "5.5.2",
     "@ultimate/sample-lib": "workspace:^",
     "@ultimate/util": "workspace:^",
     "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "graphql": "^16.8.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",

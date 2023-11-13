@@ -1,3 +1,10 @@
+import { Container } from '@ultimate/ui/src/components/atoms/container'
+import { HomePage } from '@ultimate/ui/src/components/templates/HomePage'
+
 export default function Home() {
-  return <main>Hello world</main>
+  return (
+    <main>
+      <HomePage />
+    </main>
+  )
 }

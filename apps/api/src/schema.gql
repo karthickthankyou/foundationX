@@ -34,11 +34,20 @@ type Credential {
   updatedAt: DateTime!
 }
 
+type Item {
+  id: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+}
+
 type Query {
   users(distinct: [UserScalarFieldEnum!], where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int): [User!]!
   getCredentials(email: String!): User
   getAuthProvider(uid: String!): AuthProvider
   user(where: UserWhereUniqueInput): User!
+  items(distinct: [ItemScalarFieldEnum!], where: ItemWhereInput, orderBy: [ItemOrderByWithRelationInput!], cursor: ItemWhereUniqueInput, take: Int, skip: Int): [Item!]!
+  item(where: ItemWhereUniqueInput): Item!
 }
 
 enum UserScalarFieldEnum {
@@ -107,11 +116,50 @@ input UserWhereUniqueInput {
   uid: String!
 }
 
+enum ItemScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+  name
+}
+
+input ItemWhereInput {
+  id: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  name: StringFilter
+  AND: [ItemWhereInput!]
+  OR: [ItemWhereInput!]
+  NOT: [ItemWhereInput!]
+}
+
+input IntFilter {
+  equals: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+}
+
+input ItemOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  name: SortOrder
+}
+
+input ItemWhereUniqueInput {
+  id: Int
+}
+
 type Mutation {
   createUserWithProvider(createUserWithProviderInput: CreateUserWithProviderInput!): User!
   createUserWithCredentials(createUserWithCredentialsInput: CreateUserWithCredentialsInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(where: UserWhereUniqueInput): User!
+  createItem(createItemInput: CreateItemInput!): Item!
+  updateItem(updateItemInput: UpdateItemInput!): Item!
+  removeItem(where: ItemWhereUniqueInput): Item!
 }
 
 input CreateUserWithProviderInput {
@@ -132,4 +180,13 @@ input UpdateUserInput {
   image: String
   uid: String!
   name: String
+}
+
+input CreateItemInput {
+  name: String!
+}
+
+input UpdateItemInput {
+  name: String
+  id: Int!
 }
