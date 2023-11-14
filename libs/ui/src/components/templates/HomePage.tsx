@@ -6,10 +6,10 @@ export const HomePage = () => {
     <div>
       <div className="flex flex-col items-center justify-center py-12 text-center text-gray-800 bg-gray-100">
         <h1 className="max-w-2xl mb-4 text-6xl font-black ">
-          The ultimate Full-Stack Boilerplate!
+          Foundation <span className=" font-extralight">X</span>
         </h1>
         <p className="max-w-lg mb-6 text-xl">
-          Jumpstart your development with a versatile and powerful tech stack.
+          Jumpstart Your Next Tech Venture.
         </p>
         <div className="flex flex-col justify-center gap-4 md:flex-row">
           <Link
