@@ -9,7 +9,6 @@ import {
 
 @InputType()
 export class ItemWhereUniqueInput {
-  @Field(() => Number, { nullable: true })
   id: number
 }
 

@@ -20,7 +20,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "tsc": "tsc",
-    "entity": "npx nestjs-prisma-codegen --entity"
+    "entity:gql": "npx nestjs-prisma-codegen --graphql",
+    "entity:rest": "npx nestjs-prisma-codegen --rest",
+    "entity:complete": "npx nestjs-prisma-codegen --complete"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",

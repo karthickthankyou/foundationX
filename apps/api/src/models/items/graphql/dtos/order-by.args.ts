@@ -29,6 +29,6 @@ export class ItemOrderByWithRelationInput extends PartialType(
 
 @InputType()
 export class ItemOrderByRelationAggregateInput {
-  @Field(() => Prisma.SortOrder, { nullable: true })
-  _count: Prisma.SortOrder
+  @Field(() => Prisma.SortOrder)
+  _count?: Prisma.SortOrder
 }

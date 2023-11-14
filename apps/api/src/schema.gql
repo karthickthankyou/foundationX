@@ -47,7 +47,7 @@ type Query {
   getAuthProvider(uid: String!): AuthProvider
   user(where: UserWhereUniqueInput): User!
   items(distinct: [ItemScalarFieldEnum!], where: ItemWhereInput, orderBy: [ItemOrderByWithRelationInput!], cursor: ItemWhereUniqueInput, take: Int, skip: Int): [Item!]!
-  item(where: ItemWhereUniqueInput): Item!
+  item(where: ItemWhereUniqueInput!): Item!
 }
 
 enum UserScalarFieldEnum {
@@ -149,7 +149,7 @@ input ItemOrderByWithRelationInput {
 }
 
 input ItemWhereUniqueInput {
-  id: Int
+  id: Int!
 }
 
 type Mutation {
@@ -159,7 +159,7 @@ type Mutation {
   removeUser(where: UserWhereUniqueInput): User!
   createItem(createItemInput: CreateItemInput!): Item!
   updateItem(updateItemInput: UpdateItemInput!): Item!
-  removeItem(where: ItemWhereUniqueInput): Item!
+  removeItem(where: ItemWhereUniqueInput!): Item!
 }
 
 input CreateUserWithProviderInput {

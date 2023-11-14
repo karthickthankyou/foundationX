@@ -30,6 +30,5 @@ export class FindManyItemArgs extends PartialType(FindManyItemArgsStrict) {}
 
 @ArgsType()
 export class FindUniqueItemArgs {
-  @Field({ nullable: true })
   where: ItemWhereUniqueInput
 }

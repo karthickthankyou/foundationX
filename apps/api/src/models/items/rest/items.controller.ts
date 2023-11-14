@@ -28,9 +28,6 @@ import { GetUserType } from 'src/common/util/types'
 export class ItemsController {
   constructor(private readonly prisma: PrismaService) {}
 
-  /**
-   * Create a new item
-   */
   @AllowAuthenticated()
   @ApiBearerAuth()
   @ApiCreatedResponse({ type: ItemEntity })
@@ -39,9 +36,6 @@ export class ItemsController {
     return this.prisma.item.create({ data: createItemDto })
   }
 
-  /**
-   * Retrieve a list of items
-   */
   @ApiOkResponse({ type: [ItemEntity] })
   @Get()
   findAll(@Query() { skip, take, order, sortBy }: ItemQueryDto) {
@@ -52,9 +46,6 @@ export class ItemsController {
     })
   }
 
-  /**
-   * Retrieve a specific item by its id
-   */
   @ApiOkResponse({ type: ItemEntity })
   @Get(':id')
   findOne(@Param('id') id: number) {
@@ -76,9 +67,6 @@ export class ItemsController {
     })
   }
 
-  /**
-   * Delete a item
-   */
   @ApiBearerAuth()
   @AllowAuthenticated()
   @Delete(':id')
