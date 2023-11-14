@@ -1,5 +1,5 @@
 {
-  "name": "@ultimate/web",
+  "name": "@foundation/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,8 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@ultimate/common": "workspace:^",
-    "@ultimate/ui": "workspace:^",
+    "@foundation/common": "workspace:^",
+    "@foundation/ui": "workspace:^",
     "bcrypt": "^5.1.1",
     "next": "14.0.2",
     "next-auth": "^4.24.3",

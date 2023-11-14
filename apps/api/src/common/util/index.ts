@@ -1,6 +1,6 @@
 import { ForbiddenException } from '@nestjs/common'
 import { GetUserType } from './types'
-import { Role } from '@ultimate/util/types'
+import { Role } from '@foundation/util/types'
 
 export const checkRowLevelPermission = (
   user: GetUserType,

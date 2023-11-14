@@ -1,6 +1,6 @@
 'use client'
 import { Mic2, Menu, PenBoxIcon } from 'lucide-react'
-import { useDialogState } from '@ultimate/util/hooks'
+import { useDialogState } from '@foundation/util/hooks'
 
 import Link from 'next/link'
 import {
@@ -14,7 +14,7 @@ import {
 
 import { Button } from '../atoms/button'
 
-import { MenuItem } from '@ultimate/util/types'
+import { MenuItem } from '@foundation/util/types'
 import { DisplayUser } from '../molecules/displayUser'
 import { useSession } from 'next-auth/react'
 import { buttonVariants } from '../../utils/variants'

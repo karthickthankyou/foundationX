@@ -1,4 +1,4 @@
-import { Container } from '@ultimate/ui/src/components/atoms/container'
+import { Container } from '@foundation/ui/src/components/atoms/container'
 
 export default function AnotherPage() {
   return (

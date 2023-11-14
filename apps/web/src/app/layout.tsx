@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import '@ultimate/ui/src/index.css'
+import '@foundation/ui/src/index.css'
 
-import { AuthProvider } from '@ultimate/ui/src/components/molecules/authProvider'
-import { Container } from '@ultimate/ui/src/components/atoms/container'
-import { Footer } from '@ultimate/ui/src/components/organisms/Footer'
-import { Navbar } from '@ultimate/ui/src/components/organisms/Navbar'
-import { ThemeProvider } from '@ultimate/ui/src/components/organisms/ThemeProvier'
-import { Toaster } from '@ultimate/ui/src/components/molecules/Toaster/Toaster'
+import { AuthProvider } from '@foundation/ui/src/components/molecules/authProvider'
+import { Container } from '@foundation/ui/src/components/atoms/container'
+import { Footer } from '@foundation/ui/src/components/organisms/Footer'
+import { Navbar } from '@foundation/ui/src/components/organisms/Navbar'
+import { ThemeProvider } from '@foundation/ui/src/components/organisms/ThemeProvier'
+import { Toaster } from '@foundation/ui/src/components/molecules/Toaster/Toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core'
-import { add } from '@ultimate/sample-lib'
+import { add } from '@foundation/sample-lib'
 import { AppModule } from './app.module'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 

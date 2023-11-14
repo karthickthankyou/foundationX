@@ -1,13 +1,13 @@
 'use client'
 import {} from 'lucide-react'
 
-import { useFormRegister } from '@ultimate/forms/src/register'
+import { useFormRegister } from '@foundation/forms/src/register'
 import { Button } from '../atoms/button'
 
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
-import { CreateUserWithCredentialsDocument } from '@ultimate/network/src/generated'
-import { fetchGraphQL } from '@ultimate/common/src/fetch'
+import { CreateUserWithCredentialsDocument } from '@foundation/network/src/generated'
+import { fetchGraphQL } from '@foundation/common/src/fetch'
 import { toast } from '../molecules/Toaster/use-toast'
 import { Label } from '../atoms/label'
 import { Input } from '../atoms/input'

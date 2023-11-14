@@ -1,6 +1,6 @@
 'use client'
 
-import { useFormSignin } from '@ultimate/forms/src/signin'
+import { useFormSignin } from '@foundation/forms/src/signin'
 import { Button } from '../atoms/button'
 import { signIn } from 'next-auth/react'
 

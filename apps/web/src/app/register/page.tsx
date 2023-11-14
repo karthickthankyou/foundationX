@@ -1,5 +1,5 @@
 'use client'
-import { Register } from '@ultimate/ui/src/components/templates/Register'
+import { Register } from '@foundation/ui/src/components/templates/Register'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 

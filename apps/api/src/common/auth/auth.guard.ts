@@ -9,7 +9,7 @@ import { Reflector } from '@nestjs/core'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { JwtService } from '@nestjs/jwt'
 import { PrismaService } from '../prisma/prisma.service'
-import { Role } from '@ultimate/util/types'
+import { Role } from '@foundation/util/types'
 
 @Injectable()
 export class AuthGuard implements CanActivate {

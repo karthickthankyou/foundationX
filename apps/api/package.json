@@ -1,5 +1,5 @@
 {
-  "name": "@ultimate/api",
+  "name": "@foundation/api",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -35,8 +35,8 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^7.1.15",
     "@prisma/client": "5.5.2",
-    "@ultimate/sample-lib": "workspace:^",
-    "@ultimate/util": "workspace:^",
+    "@foundation/sample-lib": "workspace:^",
+    "@foundation/util": "workspace:^",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",

@@ -1,1 +1,1 @@
-import '@ultimate/common/next-auth'
+import '@foundation/common/next-auth'

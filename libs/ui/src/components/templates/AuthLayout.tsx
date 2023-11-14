@@ -1,4 +1,4 @@
-import { BaseComponent } from '@ultimate/util/types'
+import { BaseComponent } from '@foundation/util/types'
 import { Title } from '../atoms/typography'
 
 export interface IAuthLayoutProps extends BaseComponent {

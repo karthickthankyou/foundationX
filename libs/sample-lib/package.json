@@ -1,5 +1,5 @@
 {
-  "name": "@ultimate/sample-lib",
+  "name": "@foundation/sample-lib",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",

@@ -1,4 +1,4 @@
-import { Role } from '@ultimate/util/types'
+import { Role } from '@foundation/util/types'
 
 // Todo: Fix this type based on next auth user type.
 export type GetUserType = {

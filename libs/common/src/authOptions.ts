@@ -3,7 +3,7 @@ import {
   CreateUserWithProviderDocument,
   GetAuthProviderDocument,
   GetCredentialsDocument,
-} from '@ultimate/network/src/generated'
+} from '@foundation/network/src/generated'
 import * as bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { NextAuthOptions, getServerSession } from 'next-auth'
